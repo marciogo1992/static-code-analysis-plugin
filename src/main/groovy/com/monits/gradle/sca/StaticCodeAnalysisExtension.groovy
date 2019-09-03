@@ -18,7 +18,7 @@ import org.gradle.api.NamedDomainObjectContainer
 
 /**
  * Extension to configure the Static code Analysis Plugin.
-*/
+ */
 @CompileStatic
 class StaticCodeAnalysisExtension {
     boolean ignoreErrors
@@ -28,6 +28,7 @@ class StaticCodeAnalysisExtension {
     boolean checkstyle
     boolean cpd
     boolean androidLint
+    boolean detekt
 
     String checkstyleRules
     List<String> pmdRules

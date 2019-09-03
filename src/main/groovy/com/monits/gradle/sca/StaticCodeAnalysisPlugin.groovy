@@ -93,13 +93,18 @@ class StaticCodeAnalysisPlugin implements Plugin<Project> {
                 withPlugin(JAVA_PLUGIN_ID, FindbugsConfigurator)
             }
 
+            if (extension.detekt) {
+                withAndroidPlugins FindbugsConfigurator
+                withPlugin(JAVA_PLUGIN_ID, FindbugsConfigurator)
+            }
+
             if (extension.checkstyle) {
                 withAndroidPlugins CheckstyleConfigurator
                 withPlugin(JAVA_PLUGIN_ID, CheckstyleConfigurator)
             }
 
             if (extension.pmd) {
-                withAndroidPlugins PmdConfigurator
+                withAndroidPlugins   PmdConfigurator
                 withPlugin(JAVA_PLUGIN_ID, PmdConfigurator)
             }
 
@@ -170,6 +175,7 @@ class StaticCodeAnalysisPlugin implements Plugin<Project> {
             map('checkstyle') { true }
             map('cpd') { true }
             map('androidLint') { true }
+            map('detekt') { true }
             map('checkstyleRules') {
                 if (ToolVersions.isLatestCheckstyleVersion()) {
                     return CHECKSTYLE_DEFAULT_RULES

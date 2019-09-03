@@ -24,6 +24,7 @@ apply plugin: 'build.no-resolution-at-configuration'
 dependencies {
     compileOnly gradleApi()
     compileOnly localGroovy()
+    detektPlugins "io.gitlab.arturbosch.detekt:detekt-formatting:1.0.0"
 }
 
 // Java versions
